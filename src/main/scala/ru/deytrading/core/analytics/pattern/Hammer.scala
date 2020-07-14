@@ -3,6 +3,8 @@ package ru.deytrading.core.analytics.pattern
 import akka.util.ccompat.JavaConverters._
 import ru.tinkoff.invest.openapi.models.market.{Candle, HistoricalCandles, Instrument}
 import ru.deytrading.core.analytics.InstrumentCandles._
+import cats.effect.IO
+
 trait Hammer {
   def hammerUp(l: HistoricalCandles)(instrument:Instrument)(f: String => IO[_])(schedulerDB: SchedulerService): IO[_] =
     for {

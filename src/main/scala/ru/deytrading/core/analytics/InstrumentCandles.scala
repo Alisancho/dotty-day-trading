@@ -2,7 +2,7 @@ package ru.deytrading.core.analytics
 
 import java.time.OffsetDateTime
 import java.util.Optional
-
+import cats.effect.IO
 import akka.stream.SharedKillSwitch
 import ru.tinkoff.invest.openapi.OpenApi
 import ru.tinkoff.invest.openapi.models.market.{CandleInterval, HistoricalCandles, Instrument}

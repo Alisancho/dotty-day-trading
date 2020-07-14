@@ -4,6 +4,7 @@ import akka.util.ccompat.JavaConverters._
 import ru.tinkoff.invest.openapi.models.market.{Candle, HistoricalCandles, Instrument}
 import ru.deytrading.core.analytics.СandleCandles
 import ru.deytrading.core.analytics.InstrumentCandles._
+import cats.effect.IO
 
 trait Harami {
   def haramiUp(l: HistoricalCandles)(instrument: Instrument)(f: String => IO[_])(schedulerDB: SchedulerService): IO[_] =

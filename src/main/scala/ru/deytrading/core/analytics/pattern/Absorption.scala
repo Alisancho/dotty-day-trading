@@ -1,7 +1,9 @@
 package ru.deytrading.core.analytics.pattern
-
+import cats.effect._
 import akka.util.ccompat.JavaConverters._
 import ru.tinkoff.invest.openapi.models.market.{Candle, HistoricalCandles, Instrument}
+import cats.effect.IO
+
 trait Absorption {
   def absorptionUp(l: HistoricalCandles)(instrument:Instrument)(f: String => IO[_])(schedulerDB: SchedulerService): IO[_] =
     for {
